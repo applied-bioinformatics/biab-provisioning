@@ -1,0 +1,15 @@
+---
+
+- name: copy cd.readiab.org nginx configuration
+  copy:
+    src: cd.readiab.org.conf
+    dest: /etc/nginx/sites-available/cd.readiab.org.conf
+
+- name: enable cd.readiab.org in nginx
+  file:
+    src: /etc/nginx/sites-available/cd.readiab.org.conf
+    dest: /etc/nginx/sites-enabled/cd.readiab.org
+    state: link
+  notify:
+    - stop nginx
+    - start nginx

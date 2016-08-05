@@ -1,0 +1,8 @@
+---
+
+- name: set up build-iab
+  hosts: servers
+  become: true
+  roles:
+      - biab_docker
+      - biab_nginx

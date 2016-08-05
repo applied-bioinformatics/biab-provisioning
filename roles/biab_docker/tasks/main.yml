@@ -1,0 +1,28 @@
+---
+
+- name: copy src for build
+  copy:
+    src: src
+    dest: /tmp/biab
+
+- name: copy dockerfile for build
+  copy:
+    src: Dockerfile
+    dest: /tmp/biab/Dockerfile
+
+- name: copy docker compose template
+  template:
+    src: container.yml
+    dest: /tmp/biab
+
+- name: deploy biab web containers
+  docker_service:
+    project_src: /tmp/biab
+    recreate: always
+    files:
+      - container.yml
+
+- name: clean up
+  file:
+    state: absent
+    path: /tmp/biab

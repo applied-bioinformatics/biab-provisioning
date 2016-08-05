@@ -1,0 +1,10 @@
+---
+
+# Connection specifics
+ansible_host: 192.168.50.4
+ansible_port: 22
+ansible_user: ubuntu
+ansible_ssh_private_key_file: ../powertrip-provisioning/.vagrant/machines/default/virtualbox/private_key
+
+# Do all the work in `base_dir`
+base_dir: /home/ubuntu
