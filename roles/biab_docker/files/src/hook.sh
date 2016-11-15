@@ -14,7 +14,7 @@ conda env remove -y -n iab > /dev/null
 conda create -y -n iab -c https://conda.anaconda.org/biocore python=3.5 --file ci/conda_requirements.txt > /dev/null
 source activate iab
 pip install -r ci/pip_requirements.txt > /dev/null
-pip install https://github.com/gregcaporaso/build-iab/archive/master.zip > /dev/null
+pip install https://github.com/caporaso-lab/build-iab/archive/master.zip > /dev/null
 pip install . --no-deps > /dev/null
 
 #Hack:

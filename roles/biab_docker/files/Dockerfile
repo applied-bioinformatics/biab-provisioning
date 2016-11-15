@@ -14,7 +14,7 @@ EXPOSE 5757
 
 COPY src/ ./
 RUN chmod +x hook.sh
-RUN git clone https://github.com/gregcaporaso/An-Introduction-To-Applied-Bioinformatics.git
-RUN npm install -g jthoober
+RUN git clone https://github.com/caporaso-lab/An-Introduction-To-Applied-Bioinformatics.git
+RUN npm install -g jthoober@01.2.0
 
 ENTRYPOINT xvfb-run jthoober --host 0.0.0.0 --rules ./hook_rules.js --secret $GITHUB_SECRET
