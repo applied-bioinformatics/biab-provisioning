@@ -16,11 +16,10 @@
     dest: /tmp/biab
 
 - name: deploy biab web containers
-  docker_service:
-    project_src: /tmp/biab
-    recreate: always
-    files:
-      - container.yml
+  become: True
+  command: docker-compose -f /tmp/biab/container.yml up -d
+  register: dc
+  changed_when: '"Creating biab_biab_1" in dc.stderr'
 
 - name: clean up
   file:
