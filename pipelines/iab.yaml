@@ -1,0 +1,56 @@
+resources:
+  - name: biab-provisioning
+    type: git
+    check_every: 10m
+    source:
+      uri: https://github.com/applied-bioinformatics/biab-provisioning
+      branch: master
+
+  - name: iab-source
+    type: git
+    check_every: 10m
+    source:
+      uri: https://github.com/applied-bioinformatics/An-Introduction-To-Applied-Bioinformatics
+      branch: master
+
+  - name: build-iab
+    type: git
+    check_every: 10m
+    source:
+      uri: https://github.com/applied-bioinformatics/build-iab
+      branch: master
+
+  - name: built-iab
+    type: git
+    check_every: 24h
+    source:
+      uri: https://github.com/applied-bioinformatics/built-iab
+      branch: master
+      username: ((github_user))
+      password: ((github_password))
+
+jobs:
+  - name: build
+    plan:
+      - get: biab-provisioning
+      - get: built-iab
+      - get: iab-source
+        trigger: true
+      - get: build-iab
+        trigger: true
+      - aggregate:
+        - task: build-s3
+          file: biab-provisioning/tasks/build-s3.yaml
+        - task: build-ipynb
+          file: biab-provisioning/tasks/build-ipynb.yaml
+      - task: copy-env-and-commit
+        file: biab-provisioning/tasks/copy-env.yaml
+      - aggregate:
+        - task: upload-s3
+          file: biab-provisioning/tasks/upload-s3.yaml
+          params:
+            AWS_ACCESS_KEY_ID: ((aws_access_key_id))
+            AWS_SECRET_ACCESS_KEY: ((aws_secret_access_key))
+        - put: built-iab
+          params:
+            repository: updated-built-iab
