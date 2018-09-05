@@ -3,7 +3,7 @@
 set -e
 
 conda env create -q -n iab --file iab-source/environment.yml
-source activate iab
+conda activate iab
 pip install --quiet ./iab-source
 pip install --quiet ./build-iab
 
