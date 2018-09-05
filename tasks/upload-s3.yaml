@@ -9,8 +9,8 @@ params:
   PATH: /opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 inputs:
-  - name: iab-env
   - name: biab-provisioning
+  - name: build-iab
   - name: built-s3
 
 run:

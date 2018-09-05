@@ -9,7 +9,6 @@ params:
   PATH: /opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 inputs:
-  - name: iab-env
   - name: biab-provisioning
   - name: iab-source
   - name: build-iab
