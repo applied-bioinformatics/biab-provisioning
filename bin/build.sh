@@ -3,7 +3,7 @@
 set -e
 
 git clone ./built-iab ./updated-built-iab
-apt-get install xvfb x11-utils
+apt-get install -y -q xvfb x11-utils
 
 conda env create -q -p ./iab-env --file iab-source/environment.yml
 source activate ./iab-env
