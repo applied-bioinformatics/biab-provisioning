@@ -2,7 +2,7 @@
 
 set -e
 
-conda env create -q -y -n iab python
+conda create -q -y -n iab python
 source activate iab
 pip install --quiet ./build-iab
 
