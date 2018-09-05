@@ -7,4 +7,4 @@ source activate ./iab-env
 pip install --quiet ./iab-source
 pip install --quiet ./build-iab
 
-biab s3build -i iab-source -o built-s3
+biab s3build -i iab-source/book -o built-s3

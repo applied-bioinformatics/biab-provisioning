@@ -9,4 +9,4 @@ source activate ./iab-env
 pip install --quiet ./iab-source
 pip install --quiet ./build-iab
 
-biab notebook -i iab-source -o updated-built-iab/IAB-notebooks
+biab notebook -i iab-source/book -o updated-built-iab/IAB-notebooks
