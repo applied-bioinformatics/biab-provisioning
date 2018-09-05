@@ -15,7 +15,8 @@ inputs:
   - name: built-iab
 
 outputs:
+  - name: built-s3
   - name: updated-built-iab
 
 run:
-  path: biab-provisioning/bin/build-ipynb.sh
+  path: biab-provisioning/bin/build.sh

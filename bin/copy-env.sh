@@ -6,7 +6,7 @@ set -e
 git config --global user.name iabb8
 git config --global user.email "gregcaporaso+iabb8@gmail.com"
 
-cp iab-source/Dockerfile updated-built-iab/
+cp iab-source/Dockerfile.template updated-built-iab/Dockerfile
 cp iab-source/environment.yml updated-built-iab/
 
 cd updated-built-iab

@@ -38,11 +38,8 @@ jobs:
         trigger: true
       - get: build-iab
         trigger: true
-      - aggregate:
-        - task: build-s3
-          file: biab-provisioning/tasks/build-s3.yaml
-        - task: build-ipynb
-          file: biab-provisioning/tasks/build-ipynb.yaml
+      - task: build-ipynb-and-s3
+        file: biab-provisioning/tasks/build.yaml
       - task: copy-env-and-commit
         file: biab-provisioning/tasks/copy-env.yaml
       - aggregate:
