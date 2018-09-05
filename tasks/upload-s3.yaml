@@ -10,6 +10,7 @@ params:
 
 inputs:
   - name: iab-env
+  - name: biab-provisioning
   - name: built-s3
 
 run:

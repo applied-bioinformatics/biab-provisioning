@@ -6,6 +6,7 @@ image_resource:
     version: latest
 
 inputs:
+  - name: biab-provisioning
   - name: iab-source
   - name: updated-built-iab
 
