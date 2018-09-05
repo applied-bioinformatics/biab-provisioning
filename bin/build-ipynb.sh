@@ -4,9 +4,5 @@ set -e
 
 git clone ./built-iab ./updated-built-iab
 
-conda env create -q -n iab --file iab-source/environment.yml
-conda activate iab
-pip install --quiet ./iab-source
-pip install --quiet ./build-iab
-
+source activate ./iab-env
 biab notebook -i iab-source -o updated-built-iab/IAB-notebooks

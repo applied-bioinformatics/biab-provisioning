@@ -2,9 +2,5 @@
 
 set -e
 
-conda env create -q -n iab --file iab-source/environment.yml
-conda activate iab
-pip install --quiet ./iab-source
-pip install --quiet ./build-iab
-
+source activate ./iab-env
 biab s3build -i iab-source -o built-s3

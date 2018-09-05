@@ -1,0 +1,16 @@
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: qiime2/linux-worker
+    version: latest
+
+inputs:
+  - name: iab-source
+  - name: build-iab
+
+outputs:
+  - name: iab-env
+
+run:
+  path: biab-provisioning/bin/make-env.sh

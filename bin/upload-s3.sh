@@ -2,8 +2,5 @@
 
 set -e
 
-conda create -q -y -n iab python
-conda activate iab
-pip install --quiet ./build-iab
-
+source activate ./iab-env
 biab s3upload -i built-s3 -v latest

@@ -38,6 +38,8 @@ jobs:
         trigger: true
       - get: build-iab
         trigger: true
+      - task: make-env
+        file: biab-provisioning/tasks/make-env.yaml
       - aggregate:
         - task: build-s3
           file: biab-provisioning/tasks/build-s3.yaml
