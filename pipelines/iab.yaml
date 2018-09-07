@@ -50,4 +50,4 @@ jobs:
             AWS_SECRET_ACCESS_KEY: ((aws_secret_access_key))
         - put: built-iab
           params:
-            repository: updated-built-iab
+            repository: final-built-iab

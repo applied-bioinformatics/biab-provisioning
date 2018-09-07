@@ -10,5 +10,8 @@ inputs:
   - name: iab-source
   - name: updated-built-iab
 
+outputs:
+  - name: final-built-iab
+
 run:
   path: biab-provisioning/bin/copy-env.sh
