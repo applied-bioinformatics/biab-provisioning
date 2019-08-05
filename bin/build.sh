@@ -13,4 +13,4 @@ pip install --quiet ./build-iab
 # Does not execute cells
 biab notebook -i iab-source/book -o updated-built-iab/IAB-notebooks
 
-xvfb-run biab s3build -i iab-source/book -o built-s3
+xvfb-run biab s3build -i iab-source/book -c iab-source/custom.css -o built-s3
